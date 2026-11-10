@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Credibility Lab · Form B</title><link rel="stylesheet" href="study.css"><main><nav><a href="./">Study forms</a> · <a href="../#home">Social feed</a></nav><h1>Credibility Lab · Form B</h1><label>Participant code <input></label> <label>Stage <select><option></option><option>Pre-test</option><option>Post-test</option></select></label><p>These are fictional campus posts. Judge each claim using the information available. You may open either, both or neither of the source notes. Choose one judgement, rate your confidence from 0 (no confidence) to 100 (completely confident), and briefly explain your reasoning. You may skip an item. Download your responses and return the file to your researcher before closing this page.</p>
+<section><h2>B1 · Shuttle stops</h2><p>The campus opened two new shuttle stops at South Gate in May.</p>
+<details><summary>Source 1 · Transport service log</summary><p>Two new stops at South Gate entered service on 12 May.</p></details>
+<details><summary>Source 2 · Commuter association survey</summary><p>Members documented both new South Gate stops operating on 15 May.</p></details>
+<p><label><input type="radio" name="q1" value="Supported">Supported</label> <label><input type="radio" name="q1" value="Misleading">Misleading</label> <label><input type="radio" name="q1" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<section><h2>B2 · Exercise classes</h2><p>Most university students would choose an early morning exercise class.</p>
+<details><summary>Source 1 · Sports centre survey</summary><p>In a survey of 70 volunteers at a 7 am class, 46 chose early mornings.</p></details>
+<details><summary>Source 2 · Fitness society post</summary><p>The society reposted the sports centre figures without collecting responses.</p></details>
+<p><label><input type="radio" name="q2" value="Supported">Supported</label> <label><input type="radio" name="q2" value="Misleading">Misleading</label> <label><input type="radio" name="q2" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<section><h2>B3 · Workshop access</h2><p>Every campus workshop is open to beginners without an induction.</p>
+<details><summary>Source 1 · Workshop access policy</summary><p>The print room admits beginners immediately. The woodshop requires an induction before entry.</p></details>
+<details><summary>Source 2 · Design society notice</summary><p>First-time visitors can enter the print room during open hours.</p></details>
+<p><label><input type="radio" name="q3" value="Supported">Supported</label> <label><input type="radio" name="q3" value="Misleading">Misleading</label> <label><input type="radio" name="q3" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<section><h2>B4 · Equipment loans</h2><p>Students can borrow audio recorders on Tuesdays if they reserve one first.</p>
+<details><summary>Source 1 · Media desk booking guide</summary><p>Tuesday recorder loans are available to students with a reservation.</p></details>
+<details><summary>Source 2 · Student media bulletin</summary><p>Bring your reservation number when collecting a recorder on Tuesday.</p></details>
+<p><label><input type="radio" name="q4" value="Supported">Supported</label> <label><input type="radio" name="q4" value="Misleading">Misleading</label> <label><input type="radio" name="q4" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<section><h2>B5 · Mural image</h2><p>This picture shows the entrance after the August mural was painted.</p>
+<details><summary>Source 1 · Image collection record</summary><p>The picture linked in this post was taken on 20 July of the same year.</p></details>
+<details><summary>Source 2 · Arts office diary</summary><p>Painting started on 4 August and finished on 9 August.</p></details>
+<p><label><input type="radio" name="q5" value="Supported">Supported</label> <label><input type="radio" name="q5" value="Misleading">Misleading</label> <label><input type="radio" name="q5" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<section><h2>B6 · Printing queues</h2><p>Average printing waits across campus fell by half after the upgrade.</p>
+<details><summary>Source 1 · Student interview</summary><p>One Hall A user reported waiting three minutes instead of six.</p></details>
+<details><summary>Source 2 · IT service update</summary><p>Printers at all sites were upgraded. Site-wide queue measurements have yet to be compiled.</p></details>
+<p><label><input type="radio" name="q6" value="Supported">Supported</label> <label><input type="radio" name="q6" value="Misleading">Misleading</label> <label><input type="radio" name="q6" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
+<button type="button" id="save">Download responses</button><p id="status" role="status"></p><script>
+const code=document.querySelector('input'), stage=document.querySelector('select');
+const notes=new Map();
+document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open) notes.set(d,true)}));
+document.querySelector('#save').onclick=()=>{
+const id=code.value.trim(), message=document.querySelector('#status');
+if(!/^[a-z0-9_-]{1,32}$/i.test(id)||!stage.value){message.textContent='Enter your participant code and select the stage.';return}
+if(!document.querySelectorAll('input[type=number]').length||!Array.from(document.querySelectorAll('input[type=number]')).every(el=>el.reportValidity()))return;
+const form=document.title.slice(-1);
+const items=Array.from(document.querySelectorAll('section'),(s,i)=>({item:form+(i+1),judgement:s.querySelector(':checked')?.value??null,confidence:s.querySelector('[type=number]').valueAsNumber,reason:s.querySelector('textarea').value,openedSources:Array.from(s.querySelectorAll('details')).flatMap((d,j)=>notes.has(d)||d.open?[j+1]:[])}));
+const data={participant:id,stage:stage.value,form,items};
+const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})), a=document.createElement('a');a.href=url;a.download=[id,stage.value,form].join('-')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);message.textContent='Download requested. Check the saved file before closing this page.';
+};
+</script></main></html>
