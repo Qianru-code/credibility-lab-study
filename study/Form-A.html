@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Credibility Lab · Form A</title><link rel="stylesheet" href="study.css"><main><nav><a href="./">Study forms</a> · <a href="../#home">Social feed</a></nav><h1>Credibility Lab · Form A</h1><label>Participant code <input></label> <label>Stage <select><option></option><option>Pre-test</option><option>Post-test</option></select></label><p>These are fictional campus posts. Judge each claim using the information available. You may open either, both or neither of the source notes. Choose one judgement, rate your confidence from 0 (no confidence) to 100 (completely confident), and briefly explain your reasoning. You may skip an item. Download your responses and return the file to your researcher before closing this page.</p>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Credibility Lab · Form A</title><link rel="stylesheet" href="study.css"><main><nav><a href="./">Study forms</a> · <a href="../#home">Social feed</a></nav><h1>Credibility Lab · Form A</h1><label>Participant code <input></label> <label>Stage <select><option></option><option>Pre-test</option><option>Post-test</option></select></label><p>These are fictional campus posts. Judge each claim using the information available. You may open either, both or neither of the source notes. Choose one judgement, rate your confidence from 0 (no confidence) to 100 (completely confident), and briefly explain your reasoning. You may skip an item. Select Submit responses to send your coded answers to the researcher. Wait for your receipt before closing the page.</p>
 <section><h2>A1 · Library hours</h2><p>Both campus libraries will stay open until midnight during exam week.</p>
 <details><summary>Source 1 · Library service notice</summary><p>During exam week, Central closes at midnight and West closes at 8 pm.</p></details>
 <details><summary>Source 2 · Student news brief</summary><p>Central has confirmed extended evening hours.</p></details>
@@ -23,17 +23,17 @@
 <details><summary>Source 1 · Poll report</summary><p>Of 80 volunteers recruited inside the silent room, 52 preferred silent rooms.</p></details>
 <details><summary>Source 2 · Campus newsletter</summary><p>The newsletter quotes the same poll and gives no other figures.</p></details>
 <p><label><input type="radio" name="q6" value="Supported">Supported</label> <label><input type="radio" name="q6" value="Misleading">Misleading</label> <label><input type="radio" name="q6" value="Insufficient evidence">Insufficient evidence</label></p><label>Confidence (0–100) <input type="number" min="0" max="100"></label><p><label>Reason<br><textarea></textarea></label></p></section>
-<button type="button" id="save">Download responses</button><p id="status" role="status"></p><script>
+<button type="button" id="submit">Submit responses</button> <button type="button" id="backup">Download a backup</button><p id="status" role="status"></p><script src="submission.js"></script><script>
 const code=document.querySelector('input'), stage=document.querySelector('select');
 const notes=new Map();
 document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open) notes.set(d,true)}));
-document.querySelector('#save').onclick=()=>{
+enableStudySubmission(() => {
 const id=code.value.trim(), message=document.querySelector('#status');
 if(!/^[a-z0-9_-]{1,32}$/i.test(id)||!stage.value){message.textContent='Enter your participant code and select the stage.';return}
 if(!document.querySelectorAll('input[type=number]').length||!Array.from(document.querySelectorAll('input[type=number]')).every(el=>el.reportValidity()))return;
 const form=document.title.slice(-1);
 const items=Array.from(document.querySelectorAll('section'),(s,i)=>({item:form+(i+1),judgement:s.querySelector(':checked')?.value??null,confidence:s.querySelector('[type=number]').valueAsNumber,reason:s.querySelector('textarea').value,openedSources:Array.from(s.querySelectorAll('details')).flatMap((d,j)=>notes.has(d)||d.open?[j+1]:[])}));
 const data={participant:id,stage:stage.value,form,items};
-const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})), a=document.createElement('a');a.href=url;a.download=[id,stage.value,form].join('-')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);message.textContent='Download requested. Check the saved file before closing this page.';
-};
+return {data,filename:[id,stage.value,form].join('-')+'.json'};
+});
 </script></main></html>
