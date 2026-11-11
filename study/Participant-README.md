@@ -4,6 +4,10 @@ Credibility Lab is a simulated social network for a university research project.
 
 Credibility Lab 是一个大学研究项目使用的模拟社交网络。我们希望了解大学生怎样判断社交媒体帖子中的说法，以及使用这个网站的体验。网站里的账号是虚构的，你在信息流中发帖或做出的互动保存在自己的浏览器里。网站和表单使用英文，本指南保留了按钮原名，方便查找。
 
+> **请下载并交回答卷。** 研究人员目前无法可靠地自动收到答卷。每做完一份表（前测、后测，以及网站互动组的体验问卷），请在该页面点击 **Submit responses**，再点击 **Download a backup**。即使看到回执，也请在关闭页面前确认已保存该表的 `.json` 文件，并通过约定渠道将文件作为附件发给邀请你的研究人员。
+>
+> **Please download and return each completed form.** The researcher cannot reliably receive responses automatically. After each form (pre-test, post-test and, for the interactive group, the experience questionnaire), click **Submit responses**, then **Download a backup** on that page. Even if you see a receipt, check that you have saved the `.json` file before closing the page. Send the file as an attachment to the researcher who invited you using the agreed channel.
+
 ## Before you start · 开始前
 
 Read the participant information supplied by your researcher and complete the consent process if you wish to take part. Participation is voluntary. You may skip assessment or questionnaire items, ask for help or stop at any time. Allow approximately 40–50 minutes for the session. A computer with a recent browser is easiest for writing and saving files.
@@ -31,7 +35,7 @@ Open your assigned form, enter your code under **Participant code**, and choose 
 | Misleading · 具有误导性 | The claim gives a misleading impression of what the information shows. / 帖子的说法让人对现有信息产生误解。 |
 | Insufficient evidence · 证据不足 | The available information is too limited to decide. / 现有信息不足以作出判断。 |
 
-Click **Submit responses**. Once you see **Responses received** and a receipt number, continue to your assigned learning activity. / 点击 **Submit responses（提交答案）**。看到 **Responses received（已收到）** 和回执编号后，开始分配给你的学习活动。
+Click **Submit responses**, then **Download a backup**. Save and return your pre-test JSON before starting your assigned activity. / 点击 **Submit responses**，再点 **Download a backup**。保存并交回前测 JSON 文件后，再开始本组学习任务。
 
 [Open Form A · 打开 A 卷](https://qianru-code.github.io/credibility-lab-study/study/Form-A.html) | [Open Form B · 打开 B 卷](https://qianru-code.github.io/credibility-lab-study/study/Form-B.html)
 
@@ -52,18 +56,18 @@ Open the reading sheet supplied by your researcher. Read both examples and their
 
 ## 3. Complete your post-test · 两组都做后测
 
-Use the other form. If you started with A, now open B. If you started with B, now open A. Enter the same participant code and select **Post-test**. Judge the six new posts using the same instructions as before. Submit and wait for your receipt. / 换另一份试卷：前测做 A，后测就做 B；前测做 B，后测就做 A。填同一编号，在 **Stage** 选 **Post-test（后测）**。按前测相同的方法判断六条新帖子，提交并等待回执。
+Use the other form. If you started with A, now open B. If you started with B, now open A. Enter the same participant code and select **Post-test**. Judge the six new posts using the same instructions as before. Click **Submit responses**, then **Download a backup**. Save the JSON file and send it to the researcher. / 换另一份试卷：前测做 A，后测就做 B；前测做 B，后测就做 A。填同一编号，在 **Stage** 选 **Post-test（后测）**。按前测相同的方法判断六条新帖子，点击 **Submit responses**，再点 **Download a backup**，保存后测 JSON 文件并发给研究人员。
 
 [Open the study forms · 打开试卷入口](https://qianru-code.github.io/credibility-lab-study/study/)
 
 ## 4. Tell us about the website · 网站互动组填写体验问卷
 
-After the post-test, website users complete the experience questionnaire with the same code. For the rating statements, the circles run from **Strongly agree** on the left to **Strongly disagree** on the right. Choose **N/A** for a feature you did not use or cannot judge. Select the task-completion option that describes what happened, including any help you received. Submit and wait for your receipt. / 后测结束后，用过网站的同学请用同一编号填写体验问卷。评分题从左至右是**完全同意到完全不同意**；未使用某功能或无法判断时选 **N/A**。任务完成情况请按实际体验填写，包括是否获得过帮助。提交后等待回执。
+After the post-test, website users complete the experience questionnaire with the same code. For the rating statements, the circles run from **Strongly agree** on the left to **Strongly disagree** on the right. Choose **N/A** for a feature you did not use or cannot judge. Select the task-completion option that describes what happened, including any help you received. Click **Submit responses**, then **Download a backup**. Save the JSON file and send it to the researcher. / 后测结束后，用过网站的同学请用同一编号填写体验问卷。评分题从左至右是**完全同意到完全不同意**；未使用某功能或无法判断时选 **N/A**。任务完成情况请按实际体验填写，包括是否获得过帮助。点击 **Submit responses**，再点 **Download a backup**。请将体验问卷的 JSON 文件也作为附件发给研究人员。
 
 [Open the website experience questionnaire · 打开网站体验问卷](https://qianru-code.github.io/credibility-lab-study/study/questionnaire.html)
 
 ## If a receipt does not appear · 提交后没有回执怎么办
 
-If you see **Receipt unavailable**, keep the page open. Click **Download a backup** and check that the `.json` file is in your Downloads folder. Send it to the researcher through the agreed channel and say which form you completed. You can also retry while the page is open. Once you have a receipt or a saved backup, you can close the page. / 如果看到 **Receipt unavailable（未能取得回执）**，请保持页面打开。点 **Download a backup（下载备份）**，在下载目录确认有 `.json` 文件，再通过约定渠道交给研究人员，注明完成了哪份表。也可以在当前页面重试。确认已拿到回执或保存好备份后再关页面。
+If you see **Receipt unavailable**, keep the page open. Click **Download a backup** and check that the `.json` file is in your Downloads folder. Send it to the researcher through the agreed channel and say which form you completed. You can also retry while the page is open. Close the page once the JSON file is saved. / 如果看到 **Receipt unavailable（未能取得回执）**，请保持页面打开。点 **Download a backup（下载备份）**，在下载目录确认有 `.json` 文件，再通过约定渠道交给研究人员，注明完成了哪份表。也可以在当前页面重试。确认 JSON 文件已保存后再关闭页面。
 
 At the end, contact the researcher who invited you for the debrief or for clarification about any claim. Please use the contact and withdrawal arrangements in your participant information sheet. Thank you for taking part. / 完成后，请联系邀请你的研究人员获取结束说明，也可以询问对哪些帖子还有疑问。联系方式及退出安排见参与者说明书。谢谢你的参与。
