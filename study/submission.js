@@ -16,7 +16,7 @@ function enableStudySubmission(readResponse) {
       if (!response.ok) throw new Error('Request unsuccessful');
       const reply = await response.json();
       if (reply.received !== true || !/^[a-f0-9]{32}$/.test(reply.receipt)) throw new Error('Missing receipt');
-      status.textContent = 'Responses received. Your receipt is ' + reply.receipt + '. You may close this page.';
+      status.textContent = 'Responses received. Your receipt is ' + reply.receipt + '. Download a backup and return the JSON file to your researcher.';
     } catch {
       status.textContent = 'Receipt unavailable. Keep this page open and try again, or download a backup and return it to your researcher.';
     } finally {
